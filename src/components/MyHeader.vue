@@ -24,7 +24,7 @@ export default {
 
 .header {
   background: $default;
-  border-bottom: 1px solid $light-border;
+  border-bottom: 2px solid $light-border;
 
   .container {
     @include container;

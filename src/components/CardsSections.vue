@@ -112,7 +112,7 @@ export default {
         font-weight: bolder;
         font-size: 8px;
         color: $default;
-        background: $top-banner;
+        background: $cobalto;
       }
     }
   }

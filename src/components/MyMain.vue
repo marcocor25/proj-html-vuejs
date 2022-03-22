@@ -29,7 +29,7 @@ export default {
 @import "../assets/scss/mixins.scss";
 
 .container-fluid {
-  background: $light-grey;
+  background: $smoke;
   height: 530px;
 
   .container {

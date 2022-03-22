@@ -98,7 +98,7 @@ nav {
       }
 
       .active {
-        color: $top-banner;
+        color: $cobalto;
       }
     }
   }
