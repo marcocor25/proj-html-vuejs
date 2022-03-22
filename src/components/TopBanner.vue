@@ -25,19 +25,21 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 @import "../assets/scss/colors.scss";
+@import "../assets/scss/mixins.scss";
 
 .top-banner {
+  position: sticky;
+  top: 0;
+  left: 0;
   background: $top-banner;
 
   .container {
-    width: 1200px;
+    @include container;
     min-height: 50px;
-    margin: 0 auto;
     display: flex;
     align-items: center;
     gap: 20px;
     color: $default;
-    border: 2px dashed red;
 
     h5 {
       cursor: default;
@@ -46,12 +48,14 @@ export default {
     .banner-links {
       display: flex;
       gap: 20px;
-      cursor: pointer;
       font-weight: bolder;
       text-transform: uppercase;
 
-      li:hover {
-        text-decoration: underline;
+      li {
+        cursor: pointer;
+        &:hover {
+          text-decoration: underline;
+        }
       }
     }
   }
