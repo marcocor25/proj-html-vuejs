@@ -1,9 +1,12 @@
 <template>
   <section class="posts">
-    <div class="col-10">
+    <div class="col-4">
       <h1>Test</h1>
     </div>
-    <div class="col-2">
+    <div class="col-4">
+      <h1>Test</h1>
+    </div>
+    <div class="col-4">
       <h1>Test</h1>
     </div>
   </section>
@@ -26,16 +29,12 @@ export default {
 .posts {
   min-height: 500px;
   display: flex;
+  justify-content: space-between;
   padding: 40px 0;
 
-  .col-10 {
-    flex-grow: 0.7;
+  .col-4 {
+    width: calc((100% / 3) - 20px);
     border: 2px dashed blue;
-  }
-
-  .col-2 {
-    flex-grow: 0.3;
-    border: 2px dashed orange;
   }
 }
 </style>
