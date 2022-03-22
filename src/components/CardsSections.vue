@@ -72,7 +72,6 @@ export default {
   flex-wrap: wrap;
   gap: 25px;
   padding: 40px 0;
-  background: skyblue;
 
   .card {
     flex-grow: 1;

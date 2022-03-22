@@ -1,16 +1,21 @@
 <template>
-  <div class="container">
-    <CardsSection />
+  <div class="container-fluid">
+    <div class="container">
+      <CardsSection />
+      <PostSection />
+    </div>
   </div>
 </template>
 
 <script>
 import CardsSection from "./CardsSections.vue";
+import PostSection from "./PostSection.vue";
 
 export default {
   name: "MyNav",
   components: {
     CardsSection,
+    PostSection,
   },
   data() {
     return {};
@@ -23,7 +28,12 @@ export default {
 @import "../assets/scss/colors.scss";
 @import "../assets/scss/mixins.scss";
 
-.container {
-  @include container;
+.container-fluid {
+  background: $light-grey;
+  height: 530px;
+
+  .container {
+    @include container;
+  }
 }
 </style>

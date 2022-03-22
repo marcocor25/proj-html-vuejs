@@ -53,6 +53,5 @@ ul {
   -moz-osx-font-smoothing: grayscale;
   font-size: 14px;
   color: $default-black;
-  background: $body;
 }
 </style>
