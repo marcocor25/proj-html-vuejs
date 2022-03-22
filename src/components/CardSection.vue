@@ -1,21 +1,18 @@
 <template>
   <div class="container-fluid">
     <div class="container">
-      <CardsSection />
-      <PostSection />
+      <MyCards />
     </div>
   </div>
 </template>
 
 <script>
-import CardsSection from "./CardsSections.vue";
-import PostSection from "./PostSection.vue";
+import MyCards from "./MyCards.vue";
 
 export default {
-  name: "MyNav",
+  name: "CardSection",
   components: {
-    CardsSection,
-    PostSection,
+    MyCards,
   },
   data() {
     return {};
@@ -30,7 +27,6 @@ export default {
 
 .container-fluid {
   background: $smoke;
-  height: 530px;
 
   .container {
     @include container;

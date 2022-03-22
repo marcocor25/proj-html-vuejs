@@ -16,7 +16,7 @@
 
 <script>
 export default {
-  name: "CardsSection",
+  name: "MyCards",
   data() {
     return {
       cards: [

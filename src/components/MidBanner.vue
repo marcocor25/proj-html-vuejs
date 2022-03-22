@@ -1,19 +1,14 @@
 <template>
-  <div class="container-fluid">
+  <div class="mid-banner">
     <div class="container">
-      <MyPosts />
+      <h1>Ciao</h1>
     </div>
   </div>
 </template>
 
 <script>
-import MyPosts from "./MyPosts.vue";
-
 export default {
-  name: "PostSection",
-  components: {
-    MyPosts,
-  },
+  name: "MidBanner",
   data() {
     return {};
   },
@@ -25,11 +20,15 @@ export default {
 @import "../assets/scss/colors.scss";
 @import "../assets/scss/mixins.scss";
 
-.container-fluid {
-  background: $default;
+.mid-banner {
+  background: $cobalto;
 
   .container {
     @include container;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    color: $default;
   }
 }
 </style>

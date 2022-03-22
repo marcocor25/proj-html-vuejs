@@ -3,7 +3,9 @@
     <TopBanner />
     <MyHeader />
     <MyNav />
-    <MyMain />
+    <CardSection />
+    <PostSection />
+    <MidBanner />
   </div>
 </template>
 
@@ -11,7 +13,9 @@
 import TopBanner from "./components/TopBanner.vue";
 import MyHeader from "./components/MyHeader.vue";
 import MyNav from "./components/MyNav.vue";
-import MyMain from "./components/MyMain.vue";
+import CardSection from "./components/CardSection.vue";
+import PostSection from "./components/PostSection.vue";
+import MidBanner from "./components/MidBanner.vue";
 
 export default {
   name: "App",
@@ -19,7 +23,9 @@ export default {
     TopBanner,
     MyHeader,
     MyNav,
-    MyMain,
+    CardSection,
+    PostSection,
+    MidBanner,
   },
 };
 </script>
