@@ -1,5 +1,6 @@
 <template>
   <section class="posts">
+    <!-- POPULAR POSTS -->
     <div class="col-4">
       <h3>popular posts</h3>
       <div v-for="el in popularPosts" :key="el.id" class="post-wrapper">
@@ -12,6 +13,7 @@
         </div>
       </div>
     </div>
+    <!-- RECENT POSTS -->
     <div class="col-4">
       <h3>recent posts</h3>
       <div v-for="el in recentPosts" :key="el.id" class="post-wrapper">
@@ -24,8 +26,34 @@
         </div>
       </div>
     </div>
+    <!-- FEATURED POSTS | FEATURED AUTHOE -->
     <div class="col-4">
+      <!-- FEATURED POSTS -->
       <h3>featured posts</h3>
+      <!-- CARD -->
+      <div class="card">
+        <figure>
+          <img src="../assets/img/blog-66.jpg" />
+        </figure>
+        <div class="overlay">
+          <div class="badge">recipes</div>
+          <h3>tips to help you quickly prepare your lunch</h3>
+        </div>
+      </div>
+      <!-- FEATURED AUTHOR -->
+      <h3>featured author</h3>
+      <div class="post-wrapper-big">
+        <figure class="avatar">
+          <img src="../assets/img/avatar.jpg" />
+        </figure>
+        <div class="info">
+          <h4>john doe</h4>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet cum
+            placeat est molestias?
+          </p>
+        </div>
+      </div>
     </div>
   </section>
 </template>
@@ -110,7 +138,7 @@ export default {
 @import "../assets/scss/mixins.scss";
 
 .posts {
-  min-height: 500px;
+  min-height: 450px;
   display: flex;
   justify-content: space-between;
   padding: 40px 0;
@@ -122,7 +150,7 @@ export default {
     width: calc((100% / 3) - 20px);
 
     h3 {
-      padding-bottom: 5px;
+      padding-bottom: 10px;
       text-transform: uppercase;
       font-weight: bolder;
       color: $dark;
@@ -142,23 +170,93 @@ export default {
       }
 
       figure {
-        width: 50px;
+        width: 45px;
         aspect-ratio: 1;
       }
 
-      .info {
-        h4 {
-          padding-bottom: 3px;
+      h4 {
+        padding-bottom: 3px;
+        text-transform: capitalize;
+        font-weight: 500;
+        color: $mid-grey;
+      }
+
+      p {
+        text-transform: capitalize;
+        font-size: 12px;
+        color: $light-grey;
+      }
+    }
+
+    .card {
+      cursor: pointer;
+      transition: 200ms linear;
+      position: relative;
+
+      &:hover {
+        transform: scale(0.97);
+      }
+
+      .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: 18px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-start;
+        gap: 5px;
+        background: rgba($color: #000000, $alpha: 0.3);
+
+        h3 {
+          font-size: 18px;
+          font-weight: bolder;
           text-transform: capitalize;
-          font-weight: 500;
-          color: $mid-grey;
+          color: $default;
         }
 
-        p {
-          text-transform: capitalize;
-          font-size: 12px;
-          color: $light-grey;
+        .badge {
+          padding: 5px;
+          text-transform: uppercase;
+          font-weight: bolder;
+          font-size: 8px;
+          color: $default;
+          background: $cobalto;
         }
+      }
+    }
+
+    .post-wrapper-big {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      cursor: pointer;
+      transition: 200ms linear;
+
+      &:hover {
+        background: $smoke;
+      }
+
+      .avatar {
+        max-width: 100px;
+        aspect-ratio: 1;
+      }
+
+      h4 {
+        padding: 10px 0;
+        text-transform: capitalize;
+        font-weight: bolder;
+        color: $mid-grey;
+      }
+
+      p {
+        line-height: 18px;
+        text-transform: capitalize;
+        font-size: 12px;
+        color: $light-grey;
       }
     }
   }
