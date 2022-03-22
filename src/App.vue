@@ -3,6 +3,7 @@
     <TopBanner />
     <MyHeader />
     <MyNav />
+    <MyMain />
   </div>
 </template>
 
@@ -10,6 +11,7 @@
 import TopBanner from "./components/TopBanner.vue";
 import MyHeader from "./components/MyHeader.vue";
 import MyNav from "./components/MyNav.vue";
+import MyMain from "./components/MyMain.vue";
 
 export default {
   name: "App",
@@ -17,6 +19,7 @@ export default {
     TopBanner,
     MyHeader,
     MyNav,
+    MyMain,
   },
 };
 </script>
@@ -44,11 +47,12 @@ ul {
 
 #app {
   height: 6000px;
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 14px;
-  color: #000000;
+  color: $default-black;
   background: $body;
 }
 </style>
