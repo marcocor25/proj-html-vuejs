@@ -6,6 +6,7 @@
     <CardSection />
     <PostSection />
     <MidBanner />
+    <MainSection />
   </div>
 </template>
 
@@ -16,6 +17,7 @@ import MyNav from "./components/MyNav.vue";
 import CardSection from "./components/CardSection.vue";
 import PostSection from "./components/PostSection.vue";
 import MidBanner from "./components/MidBanner.vue";
+import MainSection from "./components/MainSection.vue";
 
 export default {
   name: "App",
@@ -26,6 +28,7 @@ export default {
     CardSection,
     PostSection,
     MidBanner,
+    MainSection,
   },
 };
 </script>
@@ -52,7 +55,6 @@ ul {
 }
 
 #app {
-  height: 6000px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
