@@ -1,7 +1,13 @@
 <template>
   <div class="mid-banner">
     <div class="container">
-      <h1>Ciao</h1>
+      <div class="round">
+        <i class="fa-solid fa-chevron-left"></i>
+      </div>
+
+      <div class="round">
+        <i class="fa-solid fa-chevron-right"></i>
+      </div>
     </div>
   </div>
 </template>
@@ -27,8 +33,25 @@ export default {
     @include container;
     min-height: 150px;
     display: flex;
+    justify-content: space-between;
     align-items: center;
     color: $default;
+
+    .round {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: 200ms linear;
+      color: $dark;
+
+      &:hover {
+        background: rgba($color: #ffffff, $alpha: 0.5);
+      }
+    }
   }
 }
 </style>
