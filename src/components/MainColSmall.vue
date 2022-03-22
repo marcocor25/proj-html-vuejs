@@ -19,7 +19,7 @@ export default {
 @import "../assets/scss/mixins.scss";
 
 .col-2 {
-  width: 30%;
+  width: 23%;
   padding: 40px 0;
 }
 </style>
