@@ -1,14 +1,14 @@
 <template>
   <div class="col-10">
-    <div
-      v-for="el in contents"
-      :key="el.id"
-      class="content-box"
-      :class="el.large == true ? 'large' : ''"
-    >
-      <figure class="picture">
+    <div v-for="el in contents" :key="el.id" class="content-box">
+      <figure v-if="el.large == false" class="picture">
         <img :src="el.imgUrl" :alt="el.title" />
       </figure>
+      <div v-else class="small-images">
+        <figure v-for="(el, i) in smallImages" :key="i">
+          <img :src="el.imgUrl" />
+        </figure>
+      </div>
       <div class="info-wrapper">
         <div class="date">
           <div class="day">{{ el.day }}</div>
@@ -111,26 +111,26 @@ export default {
           comments: "12 comments",
           button: "read more",
           large: true,
-          smallImages: [
-            {
-              imgUrl: require(`../assets/img/blog-13.jpg`),
-            },
-            {
-              imgUrl: require(`../assets/img/blog-16.jpg`),
-            },
-            {
-              imgUrl: require(`../assets/img/blog-20.jpg`),
-            },
-            {
-              imgUrl: require(`../assets/img/blog-23.jpg`),
-            },
-            {
-              imgUrl: require(`../assets/img/blog-29.jpg`),
-            },
-            {
-              imgUrl: require(`../assets/img/blog-40.jpg`),
-            },
-          ],
+        },
+      ],
+      smallImages: [
+        {
+          imgUrl: require(`../assets/img/blog-13.jpg`),
+        },
+        {
+          imgUrl: require(`../assets/img/blog-16.jpg`),
+        },
+        {
+          imgUrl: require(`../assets/img/blog-20.jpg`),
+        },
+        {
+          imgUrl: require(`../assets/img/blog-23.jpg`),
+        },
+        {
+          imgUrl: require(`../assets/img/blog-29.jpg`),
+        },
+        {
+          imgUrl: require(`../assets/img/blog-40.jpg`),
         },
       ],
     };
@@ -150,8 +150,20 @@ export default {
   gap: 40px;
   padding: 40px 0;
 
-  .large {
-    background: rebeccapurple;
+  .small-images {
+    display: flex;
+    flex-wrap: wrap;
+    cursor: pointer;
+    transition: 200ms linear;
+
+    &:hover {
+      filter: brightness(0.8);
+    }
+
+    figure {
+      width: calc(100% / 3);
+      aspect-ratio: 1;
+    }
   }
 
   .content-box {
@@ -250,6 +262,7 @@ export default {
             padding: 5px 10px;
             border-radius: 5px;
             border: 1px solid $light-grey;
+            text-transform: uppercase;
             cursor: pointer;
             transition: 200ms linear;
 
