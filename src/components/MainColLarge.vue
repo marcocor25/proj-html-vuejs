@@ -231,14 +231,14 @@ export default {
 
       .date {
         flex-shrink: 0;
-        width: 60px;
         display: flex;
         flex-direction: column;
         align-items: center;
+        padding-top: 20px;
+        padding-right: 20px;
         font-size: 10px;
         font-weight: bolder;
         text-transform: capitalize;
-        padding: 20px 0;
 
         .day {
           width: 30px;
@@ -309,6 +309,7 @@ export default {
             border-radius: 5px;
             border: 1px solid $light-grey;
             text-transform: uppercase;
+            font-weight: 500;
             cursor: pointer;
             transition: 200ms linear;
 
@@ -319,7 +320,7 @@ export default {
           }
 
           i {
-            padding-right: 5px;
+            padding-right: 3px;
           }
         }
       }
