@@ -79,6 +79,7 @@ export default {
         display: flex;
         justify-content: center;
         align-items: center;
+        font-size: 10px;
         cursor: pointer;
         color: $default;
         transition: 200ms linear;
@@ -89,7 +90,7 @@ export default {
         }
 
         &:hover {
-          transform: scale(0.96);
+          font-size: 12px;
           background: $button-hover;
         }
       }

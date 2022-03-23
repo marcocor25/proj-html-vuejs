@@ -2,6 +2,14 @@
   <div class="col-2">
     <div class="twitter">
       <h3>latest from twitter</h3>
+      <div class="twit-wrapper">
+        <div v-for="el in twits" :key="el.id" class="twit">
+          <div class="icon">
+            <i class="fa-brands fa-twitter"></i>
+          </div>
+          <div class="twit-details"></div>
+        </div>
+      </div>
     </div>
     <div class="instagram">
       <h3>photos from instagram</h3>
@@ -31,6 +39,18 @@ export default {
   name: "MainColSmall",
   data() {
     return {
+      twits: [
+        {
+          id: 1,
+          text: "If you have any suggestions for the next updates, let us know.",
+          date: "01:05 PM Sep 18th",
+        },
+        {
+          id: 2,
+          text: "We have just updated Porto Admin. Check the changelog for more information.",
+          date: "01:04 PM Sep 18th",
+        },
+      ],
       smallImages: [
         {
           id: 1,
@@ -101,6 +121,33 @@ export default {
     text-transform: uppercase;
     font-weight: bolder;
     color: $dark;
+  }
+
+  .twit-wrapper {
+    min-height: 160px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .twit {
+      min-height: 60px;
+      display: flex;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+
+      &:hover {
+        border-bottom: 2px solid $light-border;
+      }
+
+      .icon {
+        padding-right: 10px;
+        font-size: 20px;
+      }
+
+      .twit-details {
+        flex-grow: 1;
+      }
+    }
   }
 
   .instagram {
