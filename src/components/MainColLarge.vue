@@ -5,8 +5,8 @@
         <img :src="el.imgUrl" :alt="el.title" />
       </figure>
       <div v-else class="small-images">
-        <figure v-for="(el, i) in smallImages" :key="i">
-          <img :src="el.imgUrl" />
+        <figure v-for="el in smallImages" :key="el.id">
+          <img :src="el.imgUrl" :alt="el.id" />
         </figure>
       </div>
       <div class="info-wrapper">
@@ -46,7 +46,9 @@
         :class="el.active == true ? 'active' : ''"
         class="page"
       >
+        <i :class="el.chevronLeft"></i>
         {{ el.page }}
+        <i :class="el.chevronRight"></i>
       </div>
     </div>
   </div>
@@ -60,8 +62,9 @@ export default {
       pages: [
         {
           id: "1",
-          page: "←",
+          chevronLeft: "fa-solid fa-chevron-left",
           active: false,
+          chevron: true,
         },
         {
           id: "2",
@@ -80,7 +83,7 @@ export default {
         },
         {
           id: "5",
-          page: "→",
+          chevronRight: "fa-solid fa-chevron-right",
           active: false,
         },
       ],
@@ -152,21 +155,27 @@ export default {
       ],
       smallImages: [
         {
+          id: 1,
           imgUrl: require(`../assets/img/blog-13.jpg`),
         },
         {
+          id: 2,
           imgUrl: require(`../assets/img/blog-16.jpg`),
         },
         {
+          id: 3,
           imgUrl: require(`../assets/img/blog-20.jpg`),
         },
         {
+          id: 4,
           imgUrl: require(`../assets/img/blog-23.jpg`),
         },
         {
+          id: 5,
           imgUrl: require(`../assets/img/blog-29.jpg`),
         },
         {
+          id: 6,
           imgUrl: require(`../assets/img/blog-40.jpg`),
         },
       ],
@@ -337,6 +346,10 @@ export default {
       &:hover {
         color: $smoke;
         background: $cobalto;
+      }
+
+      i {
+        font-size: 8px;
       }
     }
 
