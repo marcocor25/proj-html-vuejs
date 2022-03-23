@@ -5,6 +5,11 @@
     </div>
     <div class="instagram">
       <h3>photos from instagram</h3>
+      <div class="small-images">
+        <figure v-for="el in smallImages" :key="el.id">
+          <img :src="el.imgUrl" :alt="el.id" />
+        </figure>
+      </div>
     </div>
     <div class="tags">
       <h3>tags</h3>
@@ -26,6 +31,32 @@ export default {
   name: "MainColSmall",
   data() {
     return {
+      smallImages: [
+        {
+          id: 1,
+          imgUrl: require(`../assets/img/29739607_2020680068220520_4509928046932787200_n.jpg`),
+        },
+        {
+          id: 2,
+          imgUrl: require(`../assets/img/30087804_253872848488989_8792603541668626432_n.jpg`),
+        },
+        {
+          id: 3,
+          imgUrl: require(`../assets/img/29415620_196477127626244_3250318472361541632_n.jpg`),
+        },
+        {
+          id: 4,
+          imgUrl: require(`../assets/img/30078414_1274410412703843_8290935809419247616_n.jpg`),
+        },
+        {
+          id: 5,
+          imgUrl: require(`../assets/img/30077195_2066750973610181_3733150062893596672_n.jpg`),
+        },
+        {
+          id: 6,
+          imgUrl: require(`../assets/img/29415304_166583630713703_1032667922171953152_n.jpg`),
+        },
+      ],
       tags: [
         {
           id: 1,
@@ -66,15 +97,30 @@ export default {
   gap: 20px;
 
   h3 {
-    padding-bottom: 10px;
+    padding-bottom: 12px;
     text-transform: uppercase;
+    font-weight: bolder;
     color: $dark;
   }
 
-  .twitter,
   .instagram {
-    min-height: 220px;
-    background: yellow;
+    min-height: 230px;
+
+    .small-images {
+      display: flex;
+      flex-wrap: wrap;
+      cursor: pointer;
+      transition: 200ms linear;
+
+      &:hover {
+        filter: brightness(0.8);
+      }
+
+      figure {
+        width: calc(100% / 3);
+        aspect-ratio: 1;
+      }
+    }
   }
 
   .tags {
@@ -97,7 +143,7 @@ export default {
         transition: 200ms linear;
 
         &:hover {
-          transform: scale(1.1);
+          transform: scale(1.05);
         }
       }
     }
