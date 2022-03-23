@@ -39,6 +39,16 @@
         </div>
       </div>
     </div>
+    <div class="page-selection">
+      <div
+        v-for="el in pages"
+        :key="el.id"
+        :class="el.active == true ? 'active' : ''"
+        class="page"
+      >
+        {{ el.page }}
+      </div>
+    </div>
   </div>
 </template>
 
@@ -47,6 +57,33 @@ export default {
   name: "MainColLarge",
   data() {
     return {
+      pages: [
+        {
+          id: "1",
+          page: "←",
+          active: false,
+        },
+        {
+          id: "2",
+          page: "1",
+          active: true,
+        },
+        {
+          id: "3",
+          page: "2",
+          active: false,
+        },
+        {
+          id: "4",
+          page: "3",
+          active: false,
+        },
+        {
+          id: "5",
+          page: "→",
+          active: false,
+        },
+      ],
       contents: [
         {
           id: 1,
@@ -277,6 +314,35 @@ export default {
           }
         }
       }
+    }
+  }
+
+  .page-selection {
+    width: 130px;
+    align-self: flex-end;
+    display: flex;
+
+    .page {
+      width: calc(100% / 5);
+      aspect-ratio: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid $light-border;
+      font-size: 12px;
+      font-weight: bolder;
+      cursor: pointer;
+      color: $light-grey;
+
+      &:hover {
+        color: $smoke;
+        background: $cobalto;
+      }
+    }
+
+    .active {
+      color: $smoke;
+      background: $cobalto;
     }
   }
 }
