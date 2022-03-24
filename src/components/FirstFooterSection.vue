@@ -5,10 +5,24 @@
         <div class="triangle"></div>
         <div class="badge">Get in Touch</div>
       </div>
-      <div class="col large"></div>
-      <div class="col"></div>
-      <div class="col"></div>
-      <div class="col"></div>
+      <div class="col large">
+        <h4>about the blog</h4>
+        <p v-for="el in lorem" :key="el.id">
+          {{ el.text }}
+        </p>
+        <h4 class="link">
+          view more <i class="fa-solid fa-chevron-right"></i>
+        </h4>
+      </div>
+      <div class="col">
+        <h4>recent posts</h4>
+      </div>
+      <div class="col">
+        <h4>recent comments</h4>
+      </div>
+      <div class="col">
+        <h4>categories</h4>
+      </div>
     </div>
   </div>
 </template>
@@ -17,7 +31,18 @@
 export default {
   name: "FirstFooterSection",
   data() {
-    return {};
+    return {
+      lorem: [
+        {
+          id: 1,
+          text: "Lorem ipsum dolor sit amet, consecteur adipiscing elit. Donec eu pulvinar magna semper scelerisque.",
+        },
+        {
+          id: 2,
+          text: "Praesent veneratis turpis vitae purus semper, eget sagittis velit venenatis ptent taciti sociosqu ad litora...",
+        },
+      ],
+    };
   },
 };
 </script>
@@ -32,8 +57,8 @@ export default {
 
   .container {
     @include container;
-    display: flex;
     padding: 60px 0;
+    display: flex;
     position: relative;
 
     .badge-wrapper {
@@ -62,12 +87,34 @@ export default {
 
     .col {
       width: 23%;
-      min-height: 230px;
+      min-height: 240px;
+      padding-right: 30px;
       border: 2px dashed yellow;
+
+      h4 {
+        text-transform: uppercase;
+        font-weight: bolder;
+        color: $smoke;
+      }
     }
 
     .large {
       flex-grow: 1;
+
+      p {
+        padding: 10px 0;
+        line-height: 25px;
+        font-size: 12px;
+        color: $light-grey;
+      }
+
+      .link {
+        cursor: pointer;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
     }
   }
 }
