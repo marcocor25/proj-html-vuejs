@@ -58,7 +58,8 @@ export default {
     bottom: 0;
     right: 10px;
     padding: 15px;
-    border-radius: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
     font-size: 8px;
     color: $smoke;
     background: $mid-grey;

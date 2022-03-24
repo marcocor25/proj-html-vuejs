@@ -34,6 +34,27 @@
       </div>
       <div class="col">
         <h4>recent comments</h4>
+        <div class="comments-wrapper">
+          <div v-for="el in comments" :key="el.id" class="comment">
+            <div class="icon">
+              <i class="fa-solid fa-chevron-right"></i>
+            </div>
+            <div class="comment-details">
+              <p class="content">
+                <span class="author">
+                  {{ el.author }}
+                </span>
+                commented on
+                <span class="text">
+                  {{ el.text }}
+                </span>
+              </p>
+              <p class="date">
+                {{ el.date }}
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="col">
         <h4>categories</h4>
@@ -71,6 +92,20 @@ export default {
           date: "12:53 AM Dec 19th",
         },
       ],
+      comments: [
+        {
+          id: 1,
+          author: "John Doe",
+          text: "lorem ipsum dolor sit amet.",
+          date: "12:55 AM Dec 19th",
+        },
+        {
+          id: 2,
+          author: "John Doe",
+          text: "lorem ipsum dolor sit amet.",
+          date: "12:55 AM Dec 19th",
+        },
+      ],
     };
   },
 };
@@ -95,6 +130,7 @@ export default {
       cursor: default;
       position: absolute;
       top: -13px;
+      left: -10px;
 
       .triangle {
         width: 0;
@@ -119,7 +155,7 @@ export default {
       min-height: 240px;
       padding-right: 15px;
       font-size: 12px;
-      border: 2px dashed yellow;
+      // border: 2px dashed yellow;
 
       h4 {
         text-transform: uppercase;
@@ -153,6 +189,52 @@ export default {
 
               &:hover {
                 text-decoration: underline;
+              }
+            }
+
+            .date {
+              padding: 8px 0;
+              color: $light-grey;
+            }
+          }
+        }
+      }
+
+      .comments-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        padding: 10px 0;
+
+        .comment {
+          display: flex;
+          align-items: flex-start;
+
+          .icon {
+            padding-top: 4px;
+            padding-right: 4px;
+            font-size: 10px;
+            color: $cobalto;
+          }
+
+          .comment-details {
+            flex-grow: 1;
+
+            .content {
+              line-height: 18px;
+              cursor: pointer;
+              color: $smoke;
+
+              &:hover {
+                text-decoration: underline;
+              }
+
+              .author {
+                font-weight: 800;
+              }
+
+              .text {
+                color: $cobalto;
               }
             }
 
