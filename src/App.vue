@@ -21,7 +21,7 @@ import PostSection from "./components/PostSection.vue";
 import MidBanner from "./components/MidBanner.vue";
 import MainSection from "./components/MainSection.vue";
 import FirstFooterSection from "./components/FirstFooterSection.vue";
-import SecondFooterSection from "./components/SecondFoterSection.vue";
+import SecondFooterSection from "./components/SecondFooterSection.vue";
 
 export default {
   name: "App",
@@ -46,6 +46,10 @@ export default {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 img {

@@ -5,6 +5,10 @@
         <div class="triangle"></div>
         <div class="badge">Get in Touch</div>
       </div>
+      <div class="col large"></div>
+      <div class="col"></div>
+      <div class="col"></div>
+      <div class="col"></div>
     </div>
   </div>
 </template>
@@ -28,7 +32,8 @@ export default {
 
   .container {
     @include container;
-    min-height: 300px;
+    display: flex;
+    padding: 60px 0;
     position: relative;
 
     .badge-wrapper {
@@ -49,9 +54,20 @@ export default {
         padding: 5px 15px;
         font-family: "Shadows Into Light", cursive;
         font-size: 18px;
+        user-select: none;
         color: $smoke;
         background: $cobalto;
       }
+    }
+
+    .col {
+      width: 23%;
+      min-height: 230px;
+      border: 2px dashed yellow;
+    }
+
+    .large {
+      flex-grow: 1;
     }
   }
 }

@@ -14,6 +14,9 @@
         </div>
       </div>
     </div>
+    <a href="#" title="Vai a inizio pagina" class="top-page">
+      <i class="fa-solid fa-chevron-up"></i>
+    </a>
   </div>
 </template>
 
@@ -48,6 +51,18 @@ export default {
 
 .container-fluid {
   background: $extra-dark;
+  position: relative;
+
+  .top-page {
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 8px;
+    color: $smoke;
+    background: $mid-grey;
+  }
 
   .container {
     @include container;
