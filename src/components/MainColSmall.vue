@@ -7,7 +7,14 @@
           <div class="icon">
             <i class="fa-brands fa-twitter"></i>
           </div>
-          <div class="twit-details"></div>
+          <div class="twit-details">
+            <p class="content">
+              {{ el.text }}
+            </p>
+            <p class="date">
+              {{ el.date }}
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -132,12 +139,7 @@ export default {
     .twit {
       min-height: 60px;
       display: flex;
-      cursor: pointer;
       border-bottom: 2px solid transparent;
-
-      &:hover {
-        border-bottom: 2px solid $light-border;
-      }
 
       .icon {
         padding-right: 10px;
@@ -146,6 +148,22 @@ export default {
 
       .twit-details {
         flex-grow: 1;
+
+        .content {
+          line-height: 20px;
+          cursor: pointer;
+          color: $light-grey;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+
+        .date {
+          padding: 8px 0;
+          font-size: 12px;
+          color: $cobalto;
+        }
       }
     }
   }
