@@ -139,7 +139,6 @@ export default {
     .twit {
       min-height: 60px;
       display: flex;
-      border-bottom: 2px solid transparent;
 
       .icon {
         padding-right: 10px;

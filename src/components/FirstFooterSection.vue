@@ -16,6 +16,21 @@
       </div>
       <div class="col">
         <h4>recent posts</h4>
+        <div class="post-wrapper">
+          <div v-for="el in posts" :key="el.id" class="post">
+            <figure class="picture">
+              <img :src="el.imgUrl" :alt="el.id" />
+            </figure>
+            <div class="post-details">
+              <p class="content">
+                {{ el.text }}
+              </p>
+              <p class="date">
+                {{ el.date }}
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="col">
         <h4>recent comments</h4>
@@ -40,6 +55,20 @@ export default {
         {
           id: 2,
           text: "Praesent veneratis turpis vitae purus semper, eget sagittis velit venenatis ptent taciti sociosqu ad litora...",
+        },
+      ],
+      posts: [
+        {
+          id: 1,
+          imgUrl: require(`../assets/img/our-office-4-square.jpg`),
+          text: "Lorem ipsum dolor sit, consectetur adipiscing elit.",
+          date: "12:53 AM Dec 19th",
+        },
+        {
+          id: 2,
+          imgUrl: require(`../assets/img/our-office-5-square.jpg`),
+          text: "Lorem ipsum dolor sit, consectetur adipiscing elit.",
+          date: "12:53 AM Dec 19th",
         },
       ],
     };
@@ -88,13 +117,51 @@ export default {
     .col {
       width: 23%;
       min-height: 240px;
-      padding-right: 30px;
+      padding-right: 15px;
+      font-size: 12px;
       border: 2px dashed yellow;
 
       h4 {
         text-transform: uppercase;
         font-weight: bolder;
         color: $smoke;
+      }
+
+      .post-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        padding: 10px 0;
+
+        .post {
+          display: flex;
+          align-items: center;
+
+          .picture {
+            width: 70px;
+            margin-right: 10px;
+            border-radius: 50%;
+            overflow: hidden;
+          }
+
+          .post-details {
+            flex-grow: 1;
+
+            .content {
+              cursor: pointer;
+              color: $smoke;
+
+              &:hover {
+                text-decoration: underline;
+              }
+            }
+
+            .date {
+              padding: 8px 0;
+              color: $light-grey;
+            }
+          }
+        }
       }
     }
 
@@ -104,7 +171,6 @@ export default {
       p {
         padding: 10px 0;
         line-height: 25px;
-        font-size: 12px;
         color: $light-grey;
       }
 
