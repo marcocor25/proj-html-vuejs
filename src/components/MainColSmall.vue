@@ -207,7 +207,7 @@ export default {
         transition: 200ms linear;
 
         &:hover {
-          transform: scale(1.05);
+          background: $cobalto;
         }
       }
     }

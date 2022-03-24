@@ -58,6 +58,11 @@
       </div>
       <div class="col">
         <h4>categories</h4>
+        <div class="categories-wrapper">
+          <div v-for="el in categories" :key="el.id" class="category">
+            {{ el.text }}
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -106,6 +111,60 @@ export default {
           date: "12:55 AM Dec 19th",
         },
       ],
+      categories: [
+        {
+          id: 1,
+          text: "gadgets",
+        },
+        {
+          id: 2,
+          text: "photography",
+        },
+        {
+          id: 3,
+          text: "lifestyle",
+        },
+        {
+          id: 4,
+          text: "fashion",
+        },
+        {
+          id: 5,
+          text: "recipes",
+        },
+        {
+          id: 6,
+          text: "travel",
+        },
+        {
+          id: 7,
+          text: "business",
+        },
+        {
+          id: 8,
+          text: "architecture",
+        },
+        {
+          id: 9,
+          text: "reviews",
+        },
+        {
+          id: 10,
+          text: "sports",
+        },
+        {
+          id: 11,
+          text: "videos",
+        },
+        {
+          id: 12,
+          text: "technology",
+        },
+        {
+          id: 13,
+          text: "design",
+        },
+      ],
     };
   },
 };
@@ -152,10 +211,9 @@ export default {
 
     .col {
       width: 23%;
-      min-height: 240px;
-      padding-right: 15px;
+      min-height: 220px;
+      padding-right: 16px;
       font-size: 12px;
-      // border: 2px dashed yellow;
 
       h4 {
         text-transform: uppercase;
@@ -261,6 +319,30 @@ export default {
 
         &:hover {
           text-decoration: underline;
+        }
+      }
+    }
+
+    .categories-wrapper {
+      width: 75%;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      padding: 10px 0;
+
+      .category {
+        padding: 5px 7px;
+        border-radius: 5px;
+        text-transform: uppercase;
+        font-weight: bolder;
+        font-size: 9px;
+        cursor: pointer;
+        color: $smoke;
+        background: $default-black;
+        transition: 200ms linear;
+
+        &:hover {
+          background: $cobalto;
         }
       }
     }
