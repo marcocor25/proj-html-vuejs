@@ -7,6 +7,8 @@
     <PostSection />
     <MidBanner />
     <MainSection />
+    <FirstFooterSection />
+    <SecondFooterSection />
   </div>
 </template>
 
@@ -18,6 +20,8 @@ import CardSection from "./components/CardSection.vue";
 import PostSection from "./components/PostSection.vue";
 import MidBanner from "./components/MidBanner.vue";
 import MainSection from "./components/MainSection.vue";
+import FirstFooterSection from "./components/FirstFooterSection.vue";
+import SecondFooterSection from "./components/SecondFoterSection.vue";
 
 export default {
   name: "App",
@@ -29,6 +33,8 @@ export default {
     PostSection,
     MidBanner,
     MainSection,
+    FirstFooterSection,
+    SecondFooterSection,
   },
 };
 </script>

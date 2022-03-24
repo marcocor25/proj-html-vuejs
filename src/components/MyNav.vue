@@ -88,10 +88,12 @@ nav {
     .li-wrapper {
       display: flex;
       align-items: center;
-      gap: 20px;
+      gap: 30px;
 
       li {
         cursor: pointer;
+        color: $dark;
+
         &:hover {
           text-decoration: underline;
         }
