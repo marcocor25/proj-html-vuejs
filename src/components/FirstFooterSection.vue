@@ -1,7 +1,10 @@
 <template>
   <div class="container-fluid">
     <div class="container">
-      <h1>Ciao</h1>
+      <div class="badge-wrapper">
+        <div class="triangle"></div>
+        <div class="badge">Get in Touch</div>
+      </div>
     </div>
   </div>
 </template>
@@ -26,6 +29,30 @@ export default {
   .container {
     @include container;
     min-height: 300px;
+    position: relative;
+
+    .badge-wrapper {
+      display: flex;
+      cursor: default;
+      position: absolute;
+      top: -13px;
+
+      .triangle {
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 0 13px 10px;
+        border-color: transparent transparent #005580 transparent;
+      }
+
+      .badge {
+        padding: 5px 15px;
+        font-family: "Shadows Into Light", cursive;
+        font-size: 18px;
+        color: $smoke;
+        background: $cobalto;
+      }
+    }
   }
 }
 </style>
